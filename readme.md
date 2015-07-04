@@ -16,7 +16,7 @@ clone or download then
     $ cd [path]\notez-app\bin
     $ node www
 
-browse to localhost:3000
+browse to [localhost:3000](http://localhost:3000)
 
 ### optional: develop build
 with grunt
