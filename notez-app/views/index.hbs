@@ -1,0 +1,45 @@
+{{> controls}}
+
+<div class="items js-init">
+	{{#if items}}
+		{{#each items}}
+			<div class="item">
+				<div class="item-col size1of5">
+					<div class="item-due">
+						<p>fällig: {{dateFormat dueDate}}</p>
+						<input class="js-done" type="checkbox" id="inp{{_id}}" name="inp{{_id}}" value="{{_id}}"{{{checkedHelper done}}}>
+						<label for="inp{{_id}}">erledigt</label>
+					</div>
+				</div>
+				<div class="item-col size3of5">
+					<div class="line">
+						<div class="col size4of5">
+							<p class="item-title">{{title}} <span class="item-creation">({{dateFormat creationDate}})</span></p>
+						</div>
+						<div class="col size1of5">
+							<div class="item-importance" title="Wichtigkeit">
+								{{#if importance}}
+									{{{importanceHelper importance}}}
+								{{/if}}
+							</div>
+						</div>
+					</div>
+					<div class="item-desc js-expand">
+						<p class="ellipsis">{{text}}</p>
+						<i class="icon-zoom-in"></i>
+					</div>
+				</div>
+				<div class="item-col size1of5 va-middle">
+					<div class="item-action">
+						<button class="btn js-edit" data-item="{{_id}}">
+							<i class="icon-pencil2"></i>
+							<span>Bearbeiten</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	{{else}}
+		<p class="empty">Keine Einträge vorhanden</p>
+	{{/if}}
+</div>
